@@ -1,6 +1,8 @@
 import React from "react"
 import "./social.scss"
 import github from "../../media/github.png"
+import linkedin from "../../media/linkedin.png"
+import SocialIcon from "./social-icon";
 
 export default function Social() {
 
@@ -11,10 +13,9 @@ export default function Social() {
 
     return (
         <section class="social">
-            <a href="" className="pulsate-fwd"><img src={github} /></a>
-            <a href="" className="pulsate-fwd">B</a>
-            <a href="" className="pulsate-fwd">C</a>
-            <a href="" className="pulsate-fwd">D</a>
+           <SocialIcon address={"https://github.com/arturaszuta"} icon={github} />
+           <SocialIcon address={"https://www.linkedin.com/in/arturaszuta/"} icon={linkedin} />
+           
         </section>
     )
 }
