@@ -1,3 +1,9 @@
+@import "./styles/variables.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,9 +23,14 @@
 
 .topNav {
   width: 100vw;
-  background-color: grey;
   height: 3em;
- 
+  position: fixed;
+  top: 0;
+  right: 2em;
+  line-height: 3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .landingSection {
@@ -38,12 +49,71 @@
 
 .arrow {
   text-align: center;
-  margin: 17.5% 0;
+  margin: 12.5% 0;
 }
 .bounce {
   -moz-animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
+}
+
+
+
+.aboutSection {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.aboutSection__container-left {
+  width: 50%;
+  padding: 2em;
+  padding-left: 5em;
+  position: relative;
+}
+
+.about__img {
+  background-image: url("./media/toronto.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 85%;
+  height: 85%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  box-shadow: $accent -25px -25px;
+}
+
+.aboutSection__container-right {
+  width: 50%;
+  padding: 2em;
+  padding-right: 5em;
+  line-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.techStackSection {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  padding-right: 5em;
+  padding-left: 5em;
+}
+
+.techStackSection > h1 {
+  margin-bottom: 2.5em;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @keyframes bounce {
@@ -57,23 +127,5 @@
     transform: translateY(-15px);
   }
 }
-
-
-.aboutSection {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-}
-
-.aboutSection__container-left {
-  width: 50%;
-}
-
-.aboutSection__container-right {
-  width: 50%;
-}
-
-
 
 
