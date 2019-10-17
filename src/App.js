@@ -5,7 +5,10 @@ import Jumbotron from "./components/Jumbotron/jumbotron"
 import Social from "./components/Social/social"
 import Navbar from "./components/Navbar/navbar"
 import Card from "./components/Card/card"
+import ProjectCard from "./components/ProjectCard/projectcard"
+
 import arrow from "./media/arrow.png"
+import portfolio from "./media/portfolio-placeholder.jpg"
 
 function App() {
   return (
@@ -74,7 +77,12 @@ function App() {
       </section>
 
       <section className="projectSection">
-        <p>These are the ultra projects!</p>
+        <h1>MY PROJECTS</h1>
+        <div className="projectContainer">
+          <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"}/>
+          <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"}/>
+          <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"}/>
+        </div>
       </section>
 
       <section className="footer">
