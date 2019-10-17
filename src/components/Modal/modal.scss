@@ -22,6 +22,8 @@
   transform: translateY(-650px);
   opacity: 0;
   transition-duration: .65s;
+  display: flex;
+  flex-direction: row;
 }
 
 .modal__content-active {
@@ -34,4 +36,16 @@
   visibility: visible;
   transition-duration: .75s;
   opacity: 1;
+}
+
+.modal__content-left {
+  width: 40%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.modal__content-right {
+  width: 60%;
+  height: 100%;
+  border: 1px solid black;
 }

@@ -8,6 +8,8 @@ import Card from "./components/Card/card"
 import ProjectCard from "./components/ProjectCard/projectcard"
 import Modal from "./components/Modal/modal"
 
+import projects from "./projectData";
+
 import arrow from "./media/arrow.png"
 import portfolio from "./media/portfolio-placeholder.jpg"
 
@@ -15,8 +17,10 @@ function App() {
 
   const [modalState, setmodalState] = useState('modal');
   const [modalContent, setmodalContent] = useState('modal__content')
+  const [modalData, setmodalData] = useState({});
 
-  function changeModalState(params1, params2) {
+  function changeModalState(params1, params2,params3) {
+    setmodalData(projects[params3]);
     setmodalState(params1)
     setTimeout(() => {setmodalContent(params2)}, 100)
   }
@@ -25,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <Modal class={modalState} modalContent={modalContent} modalFunc={changeModalState} />
+      <Modal class={modalState} modalContent={modalContent} modalFunc={changeModalState} data={modalData}/>
       <Social />
 
 
@@ -92,9 +96,9 @@ function App() {
       <section className="projectSection">
         <h1>MY PROJECTS</h1>
         <div className="projectContainer">
-          <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"} modalFunc={changeModalState} />
-          <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"} modalFunc={changeModalState} />
-          <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"} modalFunc={changeModalState} />
+          <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"} modalFunc={changeModalState} dataSource={'yummi'} />
+          <ProjectCard img={portfolio} title={"Artsee"} tech={"React-Native, Rails"} modalFunc={changeModalState} dataSource={'artsee'} />
+          <ProjectCard img={portfolio} title={"Interview Scheduler"} tech={"React, NodeJS"} modalFunc={changeModalState} dataSource={'scheduler'}/>
         </div>
       </section>
 

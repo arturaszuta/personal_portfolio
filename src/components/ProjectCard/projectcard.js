@@ -19,7 +19,7 @@ export default function ProjectCard(props) {
             <img src={props.img} />
             <h1>{props.title}</h1>
             <p>{props.tech}</p>
-            <p onClick={() => {props.modalFunc('modal modal-active', 'modal__content modal__content-active')}}>LEARN MORE</p>    
+            <p onClick={() => {props.modalFunc('modal modal-active', 'modal__content modal__content-active', props.dataSource)}}>LEARN MORE</p>    
         </div>
     )
 }
