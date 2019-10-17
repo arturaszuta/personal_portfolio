@@ -21,15 +21,22 @@ export default function Modal(props) {
       <div className={props.modalContent} onClick={() => {props.modalFunc('modal', 'modal__content', {})}} >
         <div className="modal__content-left">
           <h1>
-            {props.data && props.data.title}
+            Project name: {props.data && props.data.title}
           </h1>
+          <h2>
+            Technologies used:
+          </h2>
           <ul>
             {stack}
           </ul>
+          <h2>
+            Description:
+          </h2>
+          <p>
             {props.data && props.data.description}
+          </p>
         </div>
         <div className="modal__content-right">
-
         </div>
       </div>
     </div>

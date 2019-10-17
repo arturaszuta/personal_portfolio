@@ -18,14 +18,24 @@ function App() {
   const [modalState, setmodalState] = useState('modal');
   const [modalContent, setmodalContent] = useState('modal__content')
   const [modalData, setmodalData] = useState({});
+  const [background, setBackground] = useState('navBar');
 
   function changeModalState(params1, params2,params3) {
-    setmodalData(projects[params3]);
+    
     setmodalState(params1)
-    setTimeout(() => {setmodalContent(params2)}, 100)
+    setTimeout(() => {setmodalContent(params2); setmodalData(projects[params3])}, 300)
   }
- 
 
+  function changeNav() {
+    setBackground('navBar moved');
+    window.removeEventListener('scroll', () => {
+      changeNav();
+    });
+  }
+
+  window.addEventListener('scroll', function() {
+    changeNav();
+  });
 
   return (
     <div className="App">
@@ -33,16 +43,16 @@ function App() {
       <Social />
 
 
-      <section className="landingSection">
+      <section className="landingSection" id="landing">
 
       <section className="topNav">
-        <Navbar />
+        <Navbar background={background}/>
       </section>
 
         <Jumbotron />
 
         <div className="arrow bounce">
-          <img src={arrow} />
+          <img src={arrow} alt="arrow"/>
         </div>
 
       </section>
@@ -65,7 +75,7 @@ function App() {
 
       </section>
 
-      <section className="techStackSection">
+      <section className="techStackSection" id="techstack">
 
         <h1>THE TECH I USE</h1>
 
@@ -93,7 +103,7 @@ function App() {
 
       </section>
 
-      <section className="projectSection">
+      <section className="projectSection" id="projects">
         <h1>MY PROJECTS</h1>
         <div className="projectContainer">
           <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"} modalFunc={changeModalState} dataSource={'yummi'} />
@@ -102,7 +112,7 @@ function App() {
         </div>
       </section>
 
-      <section className="footer">
+      <section className="footer" id="connect">
         <p>This is my awesoem footer!</p>
       </section>
 

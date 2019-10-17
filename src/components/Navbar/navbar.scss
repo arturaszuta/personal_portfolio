@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+
+.navBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.navBar > a {
+  font-weight: 700;
+  margin-left: 2em;
+  text-decoration: none;
+  letter-spacing: 3px;
+  color: white;
+  transition-duration: .3s;
+}
+
+.moved {
+  background-color: lightslategray;
+  border: 2px solid lightslategray;
+  padding-right: 2em;
+  background-color: lightsteelblue;
+}
+
+.navBar > a:hover {
+  letter-spacing: 10px;
+  transition-duration: .3s;
+  color: $accent;
+}

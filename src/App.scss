@@ -22,7 +22,6 @@ html {
 }
 
 .topNav {
-  width: 100vw;
   height: 3em;
   position: fixed;
   top: 0;
@@ -31,10 +30,11 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  z-index: 150;
 }
 
 .landingSection {
-  width: 100vw;
+  width: 100%;
   height: 75vh;
   background-image: url("./media/toronto.jpg");
   background-size: cover;
@@ -56,8 +56,6 @@ html {
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
 }
-
-
 
 .aboutSection {
   width: 100vw;
@@ -115,6 +113,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .projectSection {
@@ -123,6 +122,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10em;
 }
 
 .projectSection > h1 {
@@ -133,6 +133,13 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.footer {
+  clip-path: polygon(50% 26%, 100% 0, 100% 100%, 0 100%, 0 0);
+  background-color: lightslategray;
+  height: 500px;
+  z-index: -1;
 }
 
 @keyframes bounce {

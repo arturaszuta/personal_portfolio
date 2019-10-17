@@ -3,7 +3,7 @@ import "./navbar.scss"
 
 
 
-export default function Navbar() {
+export default function Navbar(props) {
 
 
 
@@ -11,8 +11,12 @@ export default function Navbar() {
 
 
     return (
-        <div className="navBar">
+        <div className={props.background}>
+            <a href="#landing">LANDING</a>
             <a href="#about">ABOUT</a>
+            <a href="#techstack">TECH</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#connect">CONNECT</a>
         </div>
     )
     

@@ -80,3 +80,9 @@
     transform: translateY(0);
     transition-duration: .65s;
 }
+
+.projectCard p:nth-of-type(2):hover {
+    background-color: $accent;
+    color: white;
+    transition-duration: .5s;
+}
