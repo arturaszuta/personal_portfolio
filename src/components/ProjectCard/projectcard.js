@@ -1,9 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 import "./projectcard.scss"
-import { tsPropertySignature } from "@babel/types"
+
 
 export default function ProjectCard(props) {
 
+    
+
+ 
 
 
 
@@ -16,7 +19,7 @@ export default function ProjectCard(props) {
             <img src={props.img} />
             <h1>{props.title}</h1>
             <p>{props.tech}</p>
-            <p>LEARN MORE</p>    
+            <p onClick={() => {props.modalFunc('modal modal-active', 'modal__content modal__content-active')}}>LEARN MORE</p>    
         </div>
     )
 }

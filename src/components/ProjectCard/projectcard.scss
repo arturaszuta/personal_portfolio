@@ -37,11 +37,29 @@
 .projectCard > h1 {
     margin-top: 3.5em;
     font-size: 1.25em;
+    opacity: 0;
+    transform: translateY(-125px);
+    transition-duration: .65s;
+}
+
+.projectCard:hover > h1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .65s;
 }
 
 .projectCard > p:first-of-type {
     color: $accent;
     margin-top: .25em;
+    opacity: 0;
+    transform: translateY(-125px);
+    transition-duration: .65s;
+}
+
+.projectCard:hover > p:first-of-type {
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .65s;       
 }
 
 .projectCard > p:nth-of-type(2) {
@@ -52,4 +70,13 @@
     padding: .5em;
     width: 65%;
     cursor: pointer;
+    opacity: 0;
+    transform: translateY(125px);
+    transition-duration: .65s;
+}
+
+.projectCard:hover > p:nth-of-type(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .65s;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 
 import Jumbotron from "./components/Jumbotron/jumbotron"
@@ -6,13 +6,26 @@ import Social from "./components/Social/social"
 import Navbar from "./components/Navbar/navbar"
 import Card from "./components/Card/card"
 import ProjectCard from "./components/ProjectCard/projectcard"
+import Modal from "./components/Modal/modal"
 
 import arrow from "./media/arrow.png"
 import portfolio from "./media/portfolio-placeholder.jpg"
 
 function App() {
+
+  const [modalState, setmodalState] = useState('modal');
+  const [modalContent, setmodalContent] = useState('modal__content')
+
+  function changeModalState(params1, params2) {
+    setmodalState(params1)
+    setTimeout(() => {setmodalContent(params2)}, 100)
+  }
+ 
+
+
   return (
     <div className="App">
+      <Modal class={modalState} modalContent={modalContent} modalFunc={changeModalState} />
       <Social />
 
 
@@ -79,9 +92,9 @@ function App() {
       <section className="projectSection">
         <h1>MY PROJECTS</h1>
         <div className="projectContainer">
-          <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"}/>
-          <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"}/>
-          <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"}/>
+          <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"} modalFunc={changeModalState} />
+          <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"} modalFunc={changeModalState} />
+          <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"} modalFunc={changeModalState} />
         </div>
       </section>
 
