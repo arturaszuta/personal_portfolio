@@ -113,7 +113,16 @@ function App() {
       </section>
 
       <section className="footer" id="connect">
-        <p>This is my awesoem footer!</p>
+        <div className="footer_content">
+          <h1>Want to connect or would like to work together?</h1>
+          <form>
+            <input name="name" placeholder="name" type="text"/>
+            <input name="email" placeholder="email" type="email" />
+            <textarea name="message" placeholder="message" />
+            <input name="Submit" type="submit" id="submit" />
+          </form>
+        </div>
+        <p>ARTURAS ZUTA @ 2019</p>
       </section>
 
     </div>
