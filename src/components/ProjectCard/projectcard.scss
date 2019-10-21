@@ -1,8 +1,9 @@
 @import '../../styles/variables.scss';
 
 .projectCard {
-    width: 275px;
+    max-width: 400px;
     min-width: 275px;
+    width: 30%;
     height: 425px;
     border: 1px solid black;
     position: relative;

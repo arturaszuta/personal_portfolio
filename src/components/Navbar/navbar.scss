@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .navBar {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -10,18 +10,16 @@
 
 .navBar > a {
   font-weight: 700;
-  margin-left: 2em;
+  margin-right: 2em;
   text-decoration: none;
   letter-spacing: 3px;
-  color: white;
+  color: black;
   transition-duration: .3s;
 }
 
 .moved {
-  background-color: lightslategray;
-  border: 2px solid lightslategray;
+  background-color: white;
   padding-right: 2em;
-  background-color: lightsteelblue;
 }
 
 .navBar > a:hover {

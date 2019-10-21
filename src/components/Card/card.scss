@@ -1,8 +1,9 @@
-
+@import "../../styles/variables.scss";
 
 .container .card {
     position: relative;
     cursor: pointer;
+    margin-right: 3em;
   }
   
   .container .card .face {
@@ -22,12 +23,12 @@
   }
   
   .container .card:hover .face.face1 {
-    background: #ff0057;
+    background: $accent;
     transform: translateY(0);
   }
   
   .container .card .face.face1 .content {
-    opacity: 0.2;
+    opacity: 0.8;
     transition: 0.5s;
   }
   

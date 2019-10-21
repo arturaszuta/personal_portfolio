@@ -12,6 +12,9 @@ import projects from "./projectData";
 
 import arrow from "./media/arrow.png"
 import portfolio from "./media/portfolio-placeholder.jpg"
+import languagesIcon from "./media/js_128.png"
+import frameworksIcon from "./media/code_128.png"
+import gitIcon from "./media/git_128.png"
 
 function App() {
 
@@ -68,8 +71,8 @@ function App() {
         <div className="aboutSection__container-right">
             <h1>About Me</h1>
             <br></br>
-            <p>I'm a full stack developer focused on building efficient, lightweight and visually captivating web applications. My passion for coding began in seconday school, when I had a chance to build a few websites for my relatives business - and I've been captivated by tech ever since. <br></br><br></br>I love building API's and I truly think that data(in any shape or form) is beautiful.<br></br> Nowadays I'm working on improving my skills in React-Native and, as always, continuosly learning new technologies.<br></br><br></br> I think this quote by Douglas Adams sums up tech industry quite well: <br></br><br></br>
-            <em>We are stuck with technology when what we really want is just stuff that works.</em>
+            <p>I'm a full stack developer focused on building efficient, lightweight and visually captivating web applications. My passion for coding began in seconday school, when I had a chance to build a few websites for my relatives business - and I've been fascinated by tech ever since. <br></br><br></br>I love building API's and I truly think that data (in any shape or form) is beautiful.<br></br> Nowadays I'm working on improving my skills in React-Native and, as always, continuosly learning new technologies.<br></br><br></br> I think this quote by Douglas Adams sums up tech industry quite well: <br></br><br></br>
+            <em>"We are stuck with technology when what we really want is just stuff that works."</em>
              </p>
         </div>
 
@@ -82,19 +85,19 @@ function App() {
         <div className="container">
 
           <Card 
-            imgSrc={'https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true'} 
+            imgSrc={frameworksIcon} 
             content={'HTML, CSS, JAVASCRIPT, RUBY'} 
             title={'Languages'} 
           />
 
           <Card 
-            imgSrc={'https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/code_128.png?raw=true'} 
+            imgSrc={languagesIcon} 
             content={'NodeJS/Express, React, React Native, Rails, Ajax, EJS, jQuery, Bootstrap, Semantic-UI, Ant Design, WebSockets, AWS services'} 
             title={'Frameworks, libraries'}
           />
 
           <Card 
-            imgSrc={'https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true'} 
+            imgSrc={gitIcon} 
             content={'SQL, MongoDB, Git, Mocha, Chai, Jest, Cypress, RSpec, Heroku'} 
             title={'The rest'}
           />
@@ -108,6 +111,8 @@ function App() {
         <div className="projectContainer">
           <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"} modalFunc={changeModalState} dataSource={'yummi'} />
           <ProjectCard img={portfolio} title={"Artsee"} tech={"React-Native, Rails"} modalFunc={changeModalState} dataSource={'artsee'} />
+          <ProjectCard img={portfolio} title={"Interview Scheduler"} tech={"React, NodeJS"} modalFunc={changeModalState} dataSource={'scheduler'}/>
+          <ProjectCard img={portfolio} title={"Interview Scheduler"} tech={"React, NodeJS"} modalFunc={changeModalState} dataSource={'scheduler'}/>
           <ProjectCard img={portfolio} title={"Interview Scheduler"} tech={"React, NodeJS"} modalFunc={changeModalState} dataSource={'scheduler'}/>
         </div>
       </section>
