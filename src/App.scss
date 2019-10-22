@@ -263,6 +263,10 @@ textarea::placeholder {
     height: 6em;
   }
 
+  .jumbotron {
+    margin-top: 3em;
+  }
+
   .aboutSection {
     margin-top: 2.5em;
   }
@@ -279,6 +283,10 @@ textarea::placeholder {
 @media only screen and (max-width: 500px) {
   .topNav {
     visibility: hidden;
+  }
+
+  .jumbotron {
+    margin-left: 1em;
   }
 
   .aboutSection {
