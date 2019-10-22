@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.scss';
-import axios from "axios";
 
 import Jumbotron from "./components/Jumbotron/jumbotron"
 import Social from "./components/Social/social"
@@ -53,21 +52,24 @@ function App() {
     const email = e.target.email.value;
     const message = e.target.message.value;
 
+    e.target.name.value = '';
+    e.target.email.value = '';
+    e.target.message.value = '';
+    e.target.message.placeholder = "Thanks for reaching out! I will get back to you shortly!"
+
     const obj = {
       name, email, message
     }
 
     makeRequest(obj);
-  
     
   }
   
   async function makeRequest(obj) {
    
-      await fetch('http://localhost:3005/sendform?name='+obj.name+'&email='+obj.email+'&message=' +obj.message, {
+      await fetch('https://az-portfolio-backend.herokuapp.com/sendform?name='+obj.name+'&email='+obj.email+'&message=' +obj.message, {
         method: 'POST'
       });
-    ;
     
   }
 
