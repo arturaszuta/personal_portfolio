@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.scss';
+import axios from "axios";
 
 import Jumbotron from "./components/Jumbotron/jumbotron"
 import Social from "./components/Social/social"
@@ -44,6 +45,31 @@ function App() {
   window.addEventListener('scroll', function() {
     changeNav();
   });
+
+  function submitForm(e) {
+    e.preventDefault();
+
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const message = e.target.message.value;
+
+    const obj = {
+      name, email, message
+    }
+
+    makeRequest(obj);
+  
+    
+  }
+  
+  async function makeRequest(obj) {
+   
+      await fetch('http://localhost:3005/sendform?name='+obj.name+'&email='+obj.email+'&message=' +obj.message, {
+        method: 'POST'
+      });
+    ;
+    
+  }
 
   return (
     <div className="App">
@@ -159,11 +185,11 @@ function App() {
       <section className="footer" id="connect">
         <div className="footer_content">
           <h1>Want to connect or would like to work together?</h1>
-          <form>
+          <form action="http://localhost:3005/sendform/" method="post" onSubmit={(e) => {submitForm(e)}}>
             <input name="name" placeholder="name" type="text"/>
             <input name="email" placeholder="email" type="email" />
             <textarea name="message" placeholder="message" />
-            <input name="Submit" type="submit" id="submit" />
+            <input name="Submit" type="submit" id="submit"  />
           </form>
         </div>
         <p>ARTURAS ZUTA @ 2019</p>
