@@ -16,6 +16,11 @@ import languagesIcon from "./media/js_128.png"
 import frameworksIcon from "./media/code_128.png"
 import gitIcon from "./media/git_128.png"
 
+import yummiSS from "./media/project_screenshots/yummi1.png"
+import artseeSS from "./media/project_screenshots/artsee1.jpeg"
+import schedulerSS from "./media/project_screenshots/scheduler1.png"
+import satellitSS from "./media/project_screenshots/satellit3.png"
+
 function App() {
 
   const [modalState, setmodalState] = useState('modal');
@@ -24,6 +29,7 @@ function App() {
   const [background, setBackground] = useState('navBar');
 
   function changeModalState(params1, params2,params3) {
+  
     
     setmodalState(params1)
     setTimeout(() => {setmodalContent(params2); setmodalData(projects[params3])}, 300)
@@ -109,11 +115,45 @@ function App() {
       <section className="projectSection" id="projects">
         <h1>MY PROJECTS</h1>
         <div className="projectContainer">
-          <ProjectCard img={portfolio} title={"Yummi"} tech={"NodeJS, EJS, Semantic-UI"} modalFunc={changeModalState} dataSource={'yummi'} />
-          <ProjectCard img={portfolio} title={"Artsee"} tech={"React-Native, Rails"} modalFunc={changeModalState} dataSource={'artsee'} />
-          <ProjectCard img={portfolio} title={"Interview Scheduler"} tech={"React, NodeJS"} modalFunc={changeModalState} dataSource={'scheduler'}/>
-          <ProjectCard img={portfolio} title={"Interview Scheduler"} tech={"React, NodeJS"} modalFunc={changeModalState} dataSource={'scheduler'}/>
-          <ProjectCard img={portfolio} title={"Interview Scheduler"} tech={"React, NodeJS"} modalFunc={changeModalState} dataSource={'scheduler'}/>
+
+          <ProjectCard 
+            img={yummiSS} 
+            title={"Yummi"} 
+            tech={"NodeJS, EJS, Semantic-UI"} 
+            modalFunc={changeModalState} 
+            dataSource={'yummi'} 
+            github={"https://github.com/arturaszuta/project_takeout"}
+          />
+
+          <ProjectCard 
+            img={artseeSS} 
+            title={"Artsee"} 
+            tech={"React-Native, Rails"} 
+            modalFunc={changeModalState} 
+            dataSource={'artsee'}
+            github={"https://github.com/arturaszuta/artsee"} 
+          />
+
+          <ProjectCard 
+            img={schedulerSS} 
+            title={"Interview Scheduler"} 
+            tech={"React, NodeJS"} 
+            modalFunc={changeModalState} 
+            dataSource={'scheduler'}
+            github={"https://github.com/arturaszuta/scheduler"} 
+          />
+
+          <ProjectCard 
+            img={satellitSS} 
+            title={"Satellit"} 
+            tech={"React, NodeJS"} 
+            modalFunc={changeModalState} 
+            dataSource={'satellit'}
+            github={"https://github.com/arturaszuta/scheduler"} 
+          />
+
+          <ProjectCard img={portfolio} title={"Tweeter"} tech={"EJS, Bootstrap"} modalFunc={changeModalState} dataSource={'scheduler'}/>
+
         </div>
       </section>
 
