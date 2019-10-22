@@ -14,7 +14,7 @@ export default function Card(props) {
         <div className="card">
         <div className="face face1">
             <div className="content">
-                <img src={props.imgSrc} />
+                <img src={props.imgSrc} alt="icon related to dev world"/>
                 <h3>{props.title}</h3>
             </div>
         </div>

@@ -13,7 +13,7 @@ export default function Social() {
 
 
     return (
-        <section class="social">
+        <section className="social">
            <SocialIcon address={"https://github.com/arturaszuta"} icon={github} />
            <SocialIcon address={"https://www.linkedin.com/in/arturaszuta/"} icon={linkedin} />
            <SocialIcon address={"mailto:arturaszuta@gmail.com"} icon={email} />

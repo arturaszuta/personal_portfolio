@@ -24,28 +24,19 @@ export default function Modal(props) {
 
   function changeImg() {
 
-    if(currentIMG == bgIMGs[0]) {
+    if(currentIMG === bgIMGs[0]) {
       setCurrentIMG(bgIMGs[1]);
     }
 
-    if(currentIMG == bgIMGs[1]) {
+    if(currentIMG === bgIMGs[1]) {
       setCurrentIMG(bgIMGs[2]);
     }
 
-    if(currentIMG == bgIMGs[2]) {
+    if(currentIMG === bgIMGs[2]) {
       setCurrentIMG(bgIMGs[0]);
     }
     
   }
-
-
-  
-
-  
-
-
-
-
 
 
   return (
@@ -67,7 +58,7 @@ export default function Modal(props) {
           <p>
             {props.data && props.data.description}
           </p>
-          <a href={props.github} target="_blank">VISIT GITHUB</a>
+          <a href={props.github} target="_blank" rel="noopener noreferrer">VISIT GITHUB</a>
         </div>
         <div className="modal__content-right" style={{backgroundImage: `url(${currentIMG})`}}>
           <div className="modalNavigation">
