@@ -149,10 +149,8 @@ function App() {
             tech={"React, NodeJS"} 
             modalFunc={changeModalState} 
             dataSource={'satellit'}
-            github={"https://github.com/arturaszuta/scheduler"} 
+            github={"https://github.com/arturaszuta/satellite-go"} 
           />
-
-          <ProjectCard img={portfolio} title={"Tweeter"} tech={"EJS, Bootstrap"} modalFunc={changeModalState} dataSource={'scheduler'}/>
 
         </div>
       </section>
