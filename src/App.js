@@ -11,7 +11,6 @@ import Modal from "./components/Modal/modal"
 import projects from "./projectData";
 
 import arrow from "./media/arrow.png"
-import portfolio from "./media/portfolio-placeholder.jpg"
 import languagesIcon from "./media/js_128.png"
 import frameworksIcon from "./media/code_128.png"
 import gitIcon from "./media/git_128.png"
@@ -61,7 +60,9 @@ function App() {
         <Jumbotron />
 
         <div className="arrow bounce">
-          <img src={arrow} alt="arrow"/>
+          <a href="#about">
+            <img src={arrow} alt="arrow"/>
+          </a>
         </div>
 
       </section>
@@ -77,7 +78,7 @@ function App() {
         <div className="aboutSection__container-right">
             <h1>About Me</h1>
             <br></br>
-            <p>I'm a full stack developer focused on building efficient, lightweight and visually captivating web applications. My passion for coding began in seconday school, when I had a chance to build a few websites for my relatives business - and I've been fascinated by tech ever since. <br></br><br></br>I love building API's and I truly think that data (in any shape or form) is beautiful.<br></br> Nowadays I'm working on improving my skills in React-Native and, as always, continuosly learning new technologies.<br></br><br></br> I think this quote by Douglas Adams sums up tech industry quite well: <br></br><br></br>
+            <p>I'm a full stack developer focused on building efficient, lightweight and visually captivating web applications. My passion for coding began in seconday school, when I had a chance to build a few websites for my relatives business - and I've been fascinated by tech ever since. <br></br><br></br>I love building API's and I truly think that data (in any shape or form) is beautiful.<br></br> Nowadays I'm working on improving my skills in React-Native and, as always, continuosly learning new technologies.<br></br><br></br> I think this quote by Douglas Adams sums up the tech industry quite well: <br></br><br></br>
             <em>"We are stuck with technology when what we really want is just stuff that works."</em>
              </p>
         </div>
