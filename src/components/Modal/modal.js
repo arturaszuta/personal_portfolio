@@ -42,6 +42,13 @@ export default function Modal(props) {
   return (
     <div className={props.class} onClick={() => {props.modalFunc('modal', 'modal__content', {})}}>
       <div className={props.modalContent}>
+        <div className="modal__content-right" style={{backgroundImage: `url(${currentIMG})`}}>
+          <div className="modalNavigation">
+            <img src={arrow} alt="arrow right" onClick={(event) => {
+              event.stopPropagation();
+              changeImg()}} />
+          </div>
+        </div>
         <div className="modal__content-left">
           <h1>
             Project name: {props.data && props.data.title}
@@ -59,13 +66,6 @@ export default function Modal(props) {
             {props.data && props.data.description}
           </p>
           <a href={props.github} target="_blank" rel="noopener noreferrer">VISIT GITHUB</a>
-        </div>
-        <div className="modal__content-right" style={{backgroundImage: `url(${currentIMG})`}}>
-          <div className="modalNavigation">
-            <img src={arrow} alt="arrow right" onClick={(event) => {
-              event.stopPropagation();
-              changeImg()}} />
-          </div>
         </div>
       </div>
     </div>
