@@ -292,6 +292,11 @@ textarea::placeholder {
   .aboutSection {
     width: 100%;
   }
+
+  .modal__content {
+    max-height: 75vh;
+    width: 70%;
+  }
 }
 
 
