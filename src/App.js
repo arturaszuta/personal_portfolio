@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 
 import Jumbotron from "./components/Jumbotron/jumbotron"
@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar/navbar"
 import Card from "./components/Card/card"
 import ProjectCard from "./components/ProjectCard/projectcard"
 import Modal from "./components/Modal/modal"
+import CommitDashboard from "./components/CommitDashboard/commitdashboard"
 
 import projects from "./projectData";
 
@@ -20,16 +21,28 @@ import artseeSS from "./media/project_screenshots/artsee1.jpeg"
 import schedulerSS from "./media/project_screenshots/scheduler1.png"
 import satellitSS from "./media/project_screenshots/satellit3.png"
 
+
 function App() {
 
   const [modalState, setmodalState] = useState('modal');
   const [modalContent, setmodalContent] = useState('modal__content')
   const [modalData, setmodalData] = useState({});
   const [background, setBackground] = useState('navBar');
+  const [loading, setLoading] = useState('true');
+  const [commits, setCommits] = useState([]);
+
+  useEffect(() => {
+    fetch('https://3lh9rh2jp2.execute-api.ca-central-1.amazonaws.com/default/get-commits-personal').then((res) => res.json()).then((data) => {
+      setCommits(data.Items);
+      setLoading('false')
+    })
+  }, [])
+  
+  
+
+
 
   function changeModalState(params1, params2,params3) {
-  
-    
     setmodalState(params1)
     setTimeout(() => {setmodalContent(params2); setmodalData(projects[params3])}, 300)
   }
@@ -111,6 +124,9 @@ function App() {
              </p>
         </div>
 
+      </section>
+      <section className="gitCommitReport">
+        <CommitDashboard data={commits} loading={loading}/>
       </section>
 
       <section className="techStackSection" id="techstack">
