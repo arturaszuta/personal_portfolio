@@ -125,9 +125,9 @@ function App() {
         </div>
 
       </section>
-      <section className="gitCommitReport">
+      {/* <section className="gitCommitReport">
         <CommitDashboard data={commits} loading={loading}/>
-      </section>
+      </section> */}
 
       <section className="techStackSection" id="techstack">
 
